@@ -1,16 +1,14 @@
-# 📉 World Layoffs Data Analysis Project
+#  World Layoffs Data Analysis Project
 
 ---
 
-## 📌 Project Overview
+##  Project Overview
 
-This project demonstrates comprehensive data cleaning and exploratory data analysis using **SQL** to analyze global layoff data.
-
-It transforms raw, messy data into clean, standardized information and extracts meaningful **business insights** about layoff trends across companies, industries, and time periods.
+This project demonstrates comprehensive data cleaning and exploratory data analysis using SQL to analyze global layoff data. The project transforms raw, messy data into clean, standardized information and extracts meaningful business insights about layoff trends across companies, industries, and time periods.
 
 ---
 
-## 📊 Dataset Description
+##  Dataset Description
 
 The dataset contains information about layoffs from companies worldwide, including:
 
@@ -23,26 +21,26 @@ The dataset contains information about layoffs from companies worldwide, includi
 
 ---
 
-## 🧱 Project Structure
+##  Project Structure
 
 The project is divided into two main phases:
 
-### 🔹 Phase 1: Data Cleaning & Preprocessing (`laysoff_1.sql`)
+###  Phase 1: Data Cleaning & Preprocessing (`laysoff_cleaning.sql`)
 Focuses on preparing raw data for analysis by addressing common data quality issues.
 
-### 🔹 Phase 2: Exploratory Data Analysis (`laysoff_2.sql`)
+###  Phase 2: Exploratory Data Analysis (`laysoff_EDA.sql`)
 Explores cleaned data to uncover patterns, trends, and insights about global layoff patterns.
 
 ---
 
-## 🧹 Data Cleaning Process
+##  Data Cleaning Process
 
-### ✅ Duplicate Removal
+###  Duplicate Removal
 - Created a staging table (`layoffs1`)  
 - Used `ROW_NUMBER()` to detect duplicates  
 - Removed records with `row_num > 1` to ensure data integrity  
 
-### ✅ Data Standardization
+###  Data Standardization
 - Used `TRIM()` to clean white spaces and periods in names  
 - Standardized country, industry, and date formats using:
 
@@ -51,17 +49,17 @@ Explores cleaned data to uncover patterns, trends, and insights about global lay
   STR_TO_DATE(date_column, '%m/%d/%Y')
   ```
 
-### ✅ Handling Null & Blank Values
+###  Handling Null & Blank Values
 - Converted empty strings to `NULL`  
 - Recovered missing industry data using **self-joins**  
 - Removed rows where both `total_laid_off` and `percentage_laid_off` were null  
 
-### ✅ Removing Temporary Columns
+###  Removing Temporary Columns
 - Dropped `row_num` after duplicate cleanup to keep the dataset clean  
 
 ---
 
-## 📈 Exploratory Data Analysis
+##  Exploratory Data Analysis
 
 ### Key Areas Explored:
 - Companies with **maximum layoffs**  
@@ -73,7 +71,7 @@ Explores cleaned data to uncover patterns, trends, and insights about global lay
 
 ---
 
-## 🛠 Technical Implementation
+##  Technical Implementation
 
 ### SQL Techniques Used:
 
@@ -84,7 +82,7 @@ Explores cleaned data to uncover patterns, trends, and insights about global lay
 
 ---
 
-## 💡 Key Insights Generated
+##  Key Insights Generated
 
 - Identified the **most affected companies and industries**  
 - Found **seasonal trends** in layoffs (monthly/yearly)  
@@ -93,17 +91,17 @@ Explores cleaned data to uncover patterns, trends, and insights about global lay
 
 ---
 
-## 📁 Files in This Repository
+##  Files in This Repository
 
 | File Name       | Description                             |
 |-----------------|-----------------------------------------|
-| `laysoff_1.sql` | Data cleaning and preprocessing scripts |
-| `laysoff_2.sql` | Exploratory data analysis queries       |
+| `laysoff_cleaning.sql` | Data cleaning and preprocessing scripts |
+| `laysoff_EDA.sql` | Exploratory data analysis queries       |
 | `README.md`     | This documentation file                 |
 
 ---
 
-## ⚙️ Usage Instructions
+##  Usage Instructions
 
 1. **Setup Database**  
    ```sql
@@ -111,16 +109,16 @@ Explores cleaned data to uncover patterns, trends, and insights about global lay
    ```
 
 2. **Run Data Cleaning**  
-   - Open `laysoff_1.sql` in MySQL Workbench  
+   - Open `laysoff_cleaning.sql` in MySQL Workbench  
    - Execute queries sequentially  
 
 3. **Perform Analysis**  
-   - Open `laysoff_2.sql`  
+   - Open `laysoff_EDA.sql`  
    - Run queries to generate insights  
 
 ---
 
-## 🎯 Learning Outcomes
+##  Learning Outcomes
 
 You will gain hands-on experience in:
 
@@ -132,11 +130,11 @@ You will gain hands-on experience in:
 
 ---
 
-## 🖥 Technical Requirements
+##  Technical Requirements
 
 - **MySQL** or compatible SQL database  
-- Dataset with layoff info (company, location, industry, date, layoffs)  
+- Dataset with layoff info (company, location, industry, total_laid_off, percentage_laid_off,date, stage, country, funds_raised_millions)  
 
 ---
 
-📌 *This project showcases the practical application of SQL for real-world data analysis challenges — demonstrating both technical proficiency and business insight generation.*
+ *This project showcases the practical application of SQL for real-world data analysis challenges — demonstrating both technical proficiency and business insight generation.*
